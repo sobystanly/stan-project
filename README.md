@@ -227,3 +227,7 @@ Status Code
 - 200 OK for successful GET.
 - 500 internal server error on all internal server errors.
 
+## Postman Collection
+
+- To make it easier to interact with the API, you can use the provided postman collection.
+- [Risks API.postman_collection.json](https://github.com/user-attachments/files/15512816/Risks.API.postman_collection.json)
