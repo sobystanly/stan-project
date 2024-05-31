@@ -231,3 +231,9 @@ Status Code
 
 - To make it easier to interact with the API, you can use the provided postman collection.
 - [Risks API.postman_collection.json](https://github.com/user-attachments/files/15512816/Risks.API.postman_collection.json)
+1. Download the collection
+2. Open Postman
+3. Click on the `import` button
+4. Select the downloaded JSON file
+5. Click `open`
+Now you should see the imported collection in your Postman workspace.
