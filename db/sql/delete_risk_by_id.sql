@@ -1,0 +1,1 @@
+DELETE FROM risks WHERE risk_id = $1
