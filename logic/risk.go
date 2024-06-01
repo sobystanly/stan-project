@@ -26,7 +26,7 @@ func NewRiskLogic(riskDB riskDB) *riskLogic {
 func (r *riskLogic) Add(ctx context.Context, risk data.Risk) (data.Risk, error) {
 	if !risk.State.IsValid() {
 		log.Printf("given risk: %v is invalid", risk)
-		return data.Risk{}, fmt.Errorf("risk is invalid: %v", risk)
+		return data.Risk{}, fmt.Errorf("risk state is invalid: %v", risk)
 	}
 
 	risk.ID = uuid.New()
@@ -47,6 +47,9 @@ func (r *riskLogic) GetByID(ctx context.Context, ID uuid.UUID) (data.Risk, error
 func (r *riskLogic) GetAll(ctx context.Context, options data.Options) (data.PaginatedResponse, error) {
 	if options.Offset < 0 {
 		options.Offset = 0
+	}
+	if options.Limit <= 0 {
+		options.Limit = 10
 	}
 	return r.riskDB.GetAll(ctx, options)
 }

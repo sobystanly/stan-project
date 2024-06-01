@@ -121,7 +121,7 @@ func (rh *riskHandler) GetAll(w http.ResponseWriter, r *http.Request) {
 		options.SortOrder = desc
 	}
 
-	log.Printf("fetchin risks with options: %v", options)
+	log.Printf("fetching risks with options: %v", options)
 
 	risks, err := rh.riskLogic.GetAll(ctx, options)
 	if err != nil {
