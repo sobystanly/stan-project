@@ -22,7 +22,7 @@ type (
 )
 
 func InitDB(ctx context.Context) (*db, error) {
-	connConfig := fmt.Sprintf("postgres://%s:%s@localhost:5432/%s", config.Global.PostgresUsername, config.Global.PostgresPassword, config.Global.PostgresDatabase)
+	connConfig := fmt.Sprintf("postgres://%s:%s@%s:5432/%s", config.Global.PostgresUsername, config.Global.PostgresPassword, config.Global.PostgresAddress, config.Global.PostgresDatabase)
 	conn, err := pgx.Connect(ctx, connConfig)
 	if err != nil {
 		return nil, err

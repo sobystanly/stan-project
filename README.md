@@ -237,3 +237,7 @@ Status Code
 4. Select the downloaded JSON file
 5. Click `open`
 Now you should see the imported collection in your Postman workspace.
+
+## Running the `Risk` app on local K8s cluster using KIND
+
+- The instructions to run `Risk` app on local cluster can be found [here](k8s/README.md)

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: postgres-configmap
+data:
+  postgres_address: postgres-service
+  init.sql: |
+    CREATE DATABASE risks;

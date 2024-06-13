@@ -1,5 +1,7 @@
 package config
 
+import "os"
+
 // Global defines the global configuration values
 var Global = struct {
 	PostgresAddress  string
@@ -7,8 +9,16 @@ var Global = struct {
 	PostgresPassword string
 	PostgresDatabase string
 }{
-	PostgresAddress:  "postgres",
+	PostgresAddress:  getEnv("POSTGRES_ADDRESS", "localhost"),
 	PostgresUsername: "postgres",
 	PostgresPassword: "postgres",
 	PostgresDatabase: "risks",
+}
+
+func getEnv(key, defaultVal string) string {
+	value, exists := os.LookupEnv(key)
+	if !exists {
+		return defaultVal
+	}
+	return value
 }
